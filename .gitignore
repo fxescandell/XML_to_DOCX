@@ -1,0 +1,5 @@
+# ignore archivos básicos
+.DS_Store
+.env
+ToDoList.md
+Notas.txt
