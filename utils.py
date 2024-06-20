@@ -17,6 +17,11 @@ def load_config():
     else:
         return {}
 
+def save_config(config):
+    with open(CONFIG_FILE, 'w') as f:
+        json.dump(config, f, indent=4)
+    print(f"Configuración guardada en {CONFIG_FILE}")
+
 def apply_styles(paragraph, text, style_name, doc):
     styles = doc.styles
     if style_name not in [style.name for style in styles]:
