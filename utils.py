@@ -22,15 +22,22 @@ def save_config(config):
         json.dump(config, f, indent=4)
     print(f"Configuración guardada en {CONFIG_FILE}")
 
-def apply_styles(paragraph, text, style_name, doc):
+def apply_styles(paragraph, text, style_name, style_type, doc):
     styles = doc.styles
     if style_name not in [style.name for style in styles]:
-        style = styles.add_style(style_name, WD_STYLE_TYPE.CHARACTER)
+        if style_type == 'parrafo':
+            style = styles.add_style(style_name, WD_STYLE_TYPE.PARAGRAPH)
+        elif style_type == 'caracter':
+            style = styles.add_style(style_name, WD_STYLE_TYPE.CHARACTER)
         font = style.font
         font.size = Pt(12)  # Ajusta el tamaño de fuente si es necesario
 
-    run = paragraph.add_run(text)
-    run.style = style_name
+    if style_type == 'parrafo':
+        paragraph.style = style_name
+        paragraph.add_run(text)
+    elif style_type == 'caracter':
+        run = paragraph.add_run(text)
+        run.style = style_name
 
 def process_xml_to_docx(xml_file, output_folder, output_file_name):
     config = load_config()
@@ -42,8 +49,9 @@ def process_xml_to_docx(xml_file, output_folder, output_file_name):
     def process_element(element, field):
         if element is not None and element.text:
             p = doc.add_paragraph()
-            style_name = config.get(field, {}).get('style', field)  # Use default style name if not found
-            apply_styles(p, element.text, style_name, doc)
+            style_name = config.get(field, {}).get('style', field)
+            style_type = config.get(field, {}).get('type', 'caracter')  # Default to 'caracter'
+            apply_styles(p, element.text, style_name, style_type, doc)
 
     for event in root.findall('Evento-Principal'):
         for field in config.keys():

@@ -36,22 +36,6 @@ def start_gui():
         process_xml_to_docx(xml_file, output_folder, output_file_name)
         status_var.set("Completado")
 
-    def open_styles_config():
-        config_file_path = CONFIG_FILE
-        if not os.path.exists(config_file_path):
-            messagebox.showerror("Error", f"El archivo {config_file_path} no existe.")
-            return
-
-        try:
-            if platform.system() == 'Darwin':  # macOS
-                subprocess.call(('open', config_file_path))
-            elif platform.system() == 'Windows':  # Windows
-                os.startfile(config_file_path)
-            else:  # Linux variants
-                subprocess.call(('xdg-open', config_file_path))
-        except Exception as e:
-            messagebox.showerror("Error", f"No se pudo abrir el archivo: {e}")
-
     def update_config():
         config = {}
         for field, (type_var, style_var) in fields.items():
@@ -92,7 +76,7 @@ def start_gui():
     left_frame = tk.Frame(root)
     left_frame.grid(row=0, column=0, padx=10, pady=10, sticky='n')
 
-    tk.Label(left_frame, text="Campos del XML y Estilos").grid(row=0, column=0, columnspan=3, padx=10, pady=10)
+    tk.Label(left_frame, text="Campos del XML y Estilos").grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
     for idx, field in enumerate(xml_structure):
         tk.Label(left_frame, text=field).grid(row=idx + 1, column=0, padx=10, pady=5)
@@ -122,10 +106,9 @@ def start_gui():
     tk.Entry(right_frame, textvariable=output_file_var, width=50).grid(row=2, column=1, padx=10, pady=10)
 
     tk.Button(right_frame, text="Iniciar Proceso", command=start_processing).grid(row=3, column=1, pady=10)
-    tk.Button(right_frame, text="Ver Configuración de Estilos", command=open_styles_config).grid(row=4, column=1, pady=10)
-    tk.Button(right_frame, text="Guardar Configuración de Estilos", command=update_config).grid(row=5, column=1, pady=10)
+    tk.Button(right_frame, text="Guardar Configuración de Estilos", command=update_config).grid(row=4, column=1, pady=10)
 
-    tk.Label(right_frame, textvariable=status_var).grid(row=6, column=1, padx=10, pady=10)
+    tk.Label(right_frame, textvariable=status_var).grid(row=5, column=1, padx=10, pady=10)
 
     root.mainloop()
 
