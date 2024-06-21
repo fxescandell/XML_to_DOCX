@@ -19,6 +19,10 @@
     "type": "parrafo",
     "style": "Evento-Principal-Descripcion"
   },
+  "Evento-Principal-info.extra": {
+    "type": "parrafo",
+    "style": "Evento-Principal-info.extra"
+  },
   "Sub-evento-Titulo": {
     "type": "parrafo",
     "style": "Sub-evento-Titulo"
@@ -39,6 +43,10 @@
     "type": "parrafo",
     "style": "Sub-evento-descripcion"
   },
+  "Sub-evento-info.extra": {
+    "type": "parrafo",
+    "style": "Sub-evento-info.extra"
+  },
   "actividad-titulo": {
     "type": "parrafo",
     "style": "actividad-titulo"
@@ -54,5 +62,9 @@
   "actividad-descipción": {
     "type": "parrafo",
     "style": "actividad-descipción"
+  },
+  "actividad-info.extra": {
+    "type": "parrafo",
+    "style": "actividad-info.extra"
   }
 }

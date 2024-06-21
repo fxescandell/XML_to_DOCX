@@ -61,15 +61,18 @@ def start_gui():
         'Evento-Principal-Hora',
         'Evento-Principal-Lugar',
         'Evento-Principal-Descripcion',
+        'Evento-Principal-info.extra',
         'Sub-evento-Titulo',
         'Sub-evento-Dia',
         'Sub-evento-Hora',
         'Sub-evento-Lugar',
         'Sub-evento-descripcion',
+        'Sub-evento-info.extra',
         'actividad-titulo',
         'actividad-hora',
         'actividad-lugar',
-        'actividad-descipción'
+        'actividad-descipción',
+        'actividad-info.extra'
     ]
 
     # Left column for XML fields and style settings
