@@ -8,23 +8,23 @@
         "style": "Evento-Principal-Dia"
     },
     "Evento-Principal-Hora": {
-        "type": "parrafo",
+        "type": "caracter",
         "style": "Evento-Principal-Hora"
     },
     "Evento-Principal-Lugar": {
-        "type": "parrafo",
+        "type": "caracter",
         "style": "Evento-Principal-Lugar"
     },
     "Evento-Principal-Descripcion": {
-        "type": "caracter",
+        "type": "parrafo",
         "style": "Evento-Principal-Descripcion"
     },
     "Sub-evento-Titulo": {
-        "type": "caracter",
+        "type": "parrafo",
         "style": "Sub-evento-Titulo"
     },
     "Sub-evento-Dia": {
-        "type": "caracter",
+        "type": "parrafo",
         "style": "Sub-evento-Dia"
     },
     "Sub-evento-Hora": {
@@ -36,11 +36,11 @@
         "style": "Sub-evento-Lugar"
     },
     "Sub-evento-descripcion": {
-        "type": "caracter",
+        "type": "parrafo",
         "style": "Sub-evento-descripcion"
     },
     "actividad-titulo": {
-        "type": "caracter",
+        "type": "parrafo",
         "style": "actividad-titulo"
     },
     "actividad-hora": {
@@ -52,7 +52,7 @@
         "style": "actividad-lugar"
     },
     "actividad-descipci\u00f3n": {
-        "type": "caracter",
+        "type": "parrafo",
         "style": "actividad-descipci\u00f3n"
     }
 }
