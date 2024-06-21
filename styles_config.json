@@ -51,8 +51,8 @@
     "type": "caracter",
     "style": "actividad-lugar"
   },
-  "actividad-descipci\u00f3n": {
+  "actividad-descipción": {
     "type": "parrafo",
-    "style": "actividad-descipci\u00f3n"
+    "style": "actividad-descipción"
   }
 }
