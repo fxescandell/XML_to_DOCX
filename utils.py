@@ -50,6 +50,7 @@ def clean_default_styles(doc):
             styles.element.remove(style.element)
 
 def sanitize_xml_content(content):
+    # Reemplaça & només si no està seguit de amp; per evitar interferir amb entitats HTML vàlides
     content = re.sub(r'&(?!amp;)', 'i', content)
     replacements = {
         # Si volem sanititzar altres caracters van en aquest espai amb aquest codi, exemple '&': 'i',
