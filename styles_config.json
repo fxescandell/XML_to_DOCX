@@ -59,12 +59,12 @@
     "type": "caracter",
     "style": "actividad-lugar"
   },
-  "actividad-descipción": {
+  "actividad-descipcion": {
     "type": "parrafo",
-    "style": "actividad-descipción"
+    "style": "actividad-descipcion"
   },
-  "actividad-info.extra": {
+  "actividad-info-extra": {
     "type": "parrafo",
-    "style": "actividad-info.extra"
+    "style": "actividad-info-extra"
   }
 }
